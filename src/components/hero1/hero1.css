@@ -1,0 +1,51 @@
+
+
+.clr{
+    color: white;
+}
+*
+{
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+    padding: 0;
+
+}
+.hero1{
+    background: url(giga.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    background-attachment: scroll;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+.button:hover{
+    background: transparent;
+    color: white;
+    border-color: white;
+    border: 10px;
+    border-style: solid;
+    border-width: 2px;
+    font-size: 20px;
+
+}
