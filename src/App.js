@@ -4,8 +4,18 @@ import Hero1 from "./components/hero1/hero1"
 import Card from "./components/cards/card"
 import Form from "./components/form/form"
 import Footer from "./components/footer/footer"
-import Buycomponent from "./components/buycomponent/buycomponent"
 const App=()=>{
+  var list=[]
+  const add=(article)=>{
+    list.push({
+      img: article.img,
+      name:article.name,
+      price:article.price,
+      size:article.size
+    })
+    console.log(list)
+    }
+
   const[atricle,setarticle]=useState({
     index:0,
     img:"",
@@ -43,9 +53,9 @@ const App=()=>{
     return(
 
     <div>
-      <Navbar setroute={set_route} />
+      <Navbar setroute={set_route} list={list} />
       <Hero1 setroute={set_route} />
-      <Form contactus={contactus} />
+      <Form contactus={contactus} id="contactus" />
       <Footer />
     </div>
     )
@@ -53,21 +63,13 @@ const App=()=>{
   if(route==='clothes'){
     return(
       <div>
-        <Navbar setroute={set_route}/>
-        <Card setroute={set_route} onbuy={onbuy} />
+        <Navbar setroute={set_route} list={list}/>
+        <Card setroute={set_route} onbuy={onbuy} articleadd={add} />
         <Footer />
       </div>
     )
   }
-  if(route==='buying'){
-    return(
-      <div>
-        <Navbar setroute={set_route}/>
-        <Buycomponent/>
-        <Footer />
-      </div>
-    )
-  }
+ 
   
 
 }

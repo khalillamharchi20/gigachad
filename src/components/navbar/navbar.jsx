@@ -1,5 +1,5 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Route } from "react-router-dom";
 import logo from './10.png'
 import './navbar.css'
@@ -8,7 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { counter } from "@fortawesome/fontawesome-svg-core";
 
-const Navbar=({setroute})=>{
+const Navbar=({setroute,list})=>{
+	const [len,setlen]=useState(0)
+	function Hook(){
+		useEffect(()=>{
+			setlen(list.length)
+		},[len])
+	}
+
 	const [state,setstate]=useState(false)
 	const [iconstate,seticon]=useState(faBars)
 	const onclick=(event)=>{
@@ -41,14 +48,12 @@ const Navbar=({setroute})=>{
 					<a href="/" className="nav-links" onClick={onchange}>HOME
 					</a>
 				</li>
-				<li>
-					<a href="/" className="nav-links" >SUPPORT
-					</a>
-				</li>
 			</ul>
+			<div>
 			<FontAwesomeIcon icon={faShoppingBag} className="icon">
-
-			</FontAwesomeIcon>		
+			</FontAwesomeIcon>
+			<span class='badge badge-warning' id='lblCartCount'>{len}</span>
+			</div>		
 		</div>
 		
 	)

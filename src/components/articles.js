@@ -1,28 +1,40 @@
-import logo1 from './giga.jpg'
-import logo2 from './giga 2.jpg'
-import logo3 from './giga4.jpg'
-import logo4 from './gigs.jpg'
-import logo5 from './giga5.jpg'
+import logo1 from './bsk.jpg'
+
 export const atricles=[
     {index:1,
-        img: logo1,
-    price:80
+    img: logo1,
+    price:80,
+    desc:'surchemise oversized ',
+    s:10,
+    m:10,
+    l:10
 },
     {
         index:2,
-        img: logo2,
-        price:100
+        img: logo1,
+        price:100,
+        desc:"t_shirt a col monté",
+        s:10,
+        m:10,
+        l:10
     },
     {
         index:3,
-        img:logo4,
-        price:140
+        img:logo1,
+        price:140,
+        desc:"hoodie assassin creed",
+        s:10,
+        m:10,
+        l:10
     },
     {
         index:4,
-        img: logo5,
-        price:180
-
+        img: logo1,
+        price:180,
+        desc:"parkas long",
+        s:10,
+        m:10,
+        l:10
     }
 
 ]
