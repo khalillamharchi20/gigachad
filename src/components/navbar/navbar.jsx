@@ -6,16 +6,12 @@ import './navbar.css'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-import { counter } from "@fortawesome/fontawesome-svg-core";
+
 
 const Navbar=({setroute,list})=>{
-	const [len,setlen]=useState(0)
-	function Hook(){
-		useEffect(()=>{
-			setlen(list.length)
-		},[len])
-	}
-
+	useEffect(()=>{
+		console.log('nothing')
+	},[list])
 	const [state,setstate]=useState(false)
 	const [iconstate,seticon]=useState(faBars)
 	const onclick=(event)=>{
@@ -52,7 +48,7 @@ const Navbar=({setroute,list})=>{
 			<div>
 			<FontAwesomeIcon icon={faShoppingBag} className="icon">
 			</FontAwesomeIcon>
-			<span class='badge badge-warning' id='lblCartCount'>{len}</span>
+			<span className='badge badge-warning' id='lblCartCount'>{list}</span>
 			</div>		
 		</div>
 		

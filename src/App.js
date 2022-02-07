@@ -5,15 +5,21 @@ import Card from "./components/cards/card"
 import Form from "./components/form/form"
 import Footer from "./components/footer/footer"
 const App=()=>{
-  var list=[]
+  const [list,setlist]=useState([])
+  const[lenlist,setlenlist]=useState(0)
   const add=(article)=>{
-    list.push({
+    
+    const newValue={
       img: article.img,
       name:article.name,
       price:article.price,
       size:article.size
-    })
+    }
+    setlist(list=>[...list,newValue]
+      )
     console.log(list)
+    setlenlist(list.length)
+    console.log(lenlist)
     }
 
   const[atricle,setarticle]=useState({
@@ -53,7 +59,7 @@ const App=()=>{
     return(
 
     <div>
-      <Navbar setroute={set_route} list={list} />
+      <Navbar setroute={set_route} list={lenlist} />
       <Hero1 setroute={set_route} />
       <Form contactus={contactus} id="contactus" />
       <Footer />
@@ -63,7 +69,7 @@ const App=()=>{
   if(route==='clothes'){
     return(
       <div>
-        <Navbar setroute={set_route} list={list}/>
+        <Navbar setroute={set_route} list={lenlist}/>
         <Card setroute={set_route} onbuy={onbuy} articleadd={add} />
         <Footer />
       </div>
