@@ -7,6 +7,16 @@ import Footer from "./components/footer/footer"
 const App=()=>{
   const [list,setlist]=useState([])
   const[lenlist,setlenlist]=useState(0)
+  const find=(list,newvalue)=>{
+    var temoin=false
+    for(let k=0;k<list.length;k++){
+      if (JSON.stringify(list[k])===JSON.stringify(newvalue)){
+        console.log('chil3ba')
+        temoin=true
+      }
+    }
+    return temoin
+  }
   const add=(article)=>{
     
     const newValue={
@@ -15,11 +25,12 @@ const App=()=>{
       price:article.price,
       size:article.size
     }
-    setlist(list=>[...list,newValue]
-      )
-    console.log(list)
+    var tem =find(list,newValue)
+    if(tem===false){
+      setlist(list=>[...list,newValue])
+    }
+
     setlenlist(list.length)
-    console.log(lenlist)
     }
 
   const[atricle,setarticle]=useState({

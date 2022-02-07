@@ -10,7 +10,6 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar=({setroute,list})=>{
 	useEffect(()=>{
-		console.log('nothing')
 	},[list])
 	const [state,setstate]=useState(false)
 	const [iconstate,seticon]=useState(faBars)
