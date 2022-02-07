@@ -26,7 +26,6 @@ const Cardscomponent=({user,setroute,onbuy,articleadd})=>{
     }
     const check=(event)=>{
         if(size1 === false && size2 === false && size3 === false){
-            alert('choose a size')
             return(true)
         }
         else{
@@ -76,8 +75,8 @@ const Cardscomponent=({user,setroute,onbuy,articleadd})=>{
                         <p className={size3? 'boxsize2':'boxsize'} onClick={resize2} >L</p>
                     </div>
                     </div>
-                    <div className="flexsize2" onClick={add} >
-                        <p >ADD TO CART</p>
+                    <div className={check() ? "changed" : "flexsize2"} onClick={add} >
+                        <p ></p>
                         <FontAwesomeIcon className="iconbuy"  icon={faShoppingCart}></FontAwesomeIcon>
                     </div>
         </div>

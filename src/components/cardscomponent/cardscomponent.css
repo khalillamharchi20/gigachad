@@ -72,7 +72,19 @@
     margin-left: auto;
     transform: translateY(-70px);
 }
-
+.changed{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    transform: translateY(-70px);
+}
+.changed > p::after{
+    content: 'ADD TO CART';
+    transition: all 0.3s ease;
+}
+.changed:hover p::after{
+    content: 'CHOOSE A SIZE';
+}
 .sizes{
     font-weight: bold;
     font-size: 8px;
@@ -99,6 +111,10 @@
 .flexsize2:hover{
     opacity: 0.5;
 }
+.flexsize2 > p::after{
+    content: 'ADD TO CART';
+}
+
 .boxsize2{
     border-width: 1px;
     border-style: solid;
